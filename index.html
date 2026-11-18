@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <main-head></main-head>
+    <script src="js/head.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <main-header></main-header>
+
+        <div id="page-home" class="page active">
+            <a href="about.html" class="card-link">
+                <div class="header-image-wrapper">
+                    <img src="https://placehold.net/2.png" alt="Header Image" class="header-image">
+                </div>
+            </a>
+
+            <div id="widget-grid" class="widget-grid">
+
+                <!-- total距離 -->
+                <a href="steps.html" class="card-link">
+                    <div id="widget-total" class="widget widget-total" onclick="switchPage('total')">
+                        <div class="widget-header">
+                            <span class="widget-title">TOTAL</span>
+                            <span class="material-symbols-outlined arrow">chevron_right</span>
+                        </div>
+                        <div class="widget-content">
+                            <h3 class="widget-value" id="home-total-dist">333.4 <span class="unit">km</span></h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- recent activity -->
+                <a href="activities.html" class="card-link">
+                    <div id="widget-recent" class="widget widget-recent" onclick="switchPage('activities')">
+                        <div class="widget-header">
+                            <span class="widget-title">Recent ACTIVITY</span>
+                            <span class="material-symbols-outlined arrow">chevron_right</span>
+                        </div>
+                        <div class="widget-content">
+                            <h3 class="widget-value" id="home-recent-name">読み込み中</h3>
+                            <p class="widget-sub-value" id="home-recent-val"></p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- weather -->
+                <a href="weather.html" class="card-link">
+                    <div id="widget-weather" class="widget widget-weather" onclick="switchPage('weather')">
+                        <div class="widget-header">
+                            <span class="widget-title">Weather</span>
+                            <span class="material-symbols-outlined arrow">chevron_right</span>
+                        </div>
+                        <div class="widget-content">
+                            <h3 class="widget-value" id="home-weather-temp">18°C</h3>
+                            <p class="widget-sub-value" id="home-weather-hum">34%</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- empty widget -->
+                <div id="widget-empty" class="widget widget-empty" onclick="toggleWidgetEdit()">
+                    <span class="material-symbols-outlined arrow align-right">chevron_right</span>
+                </div>
+
+            </div>
+
+            <div class="add-widget-container">
+                <button class="fab-btn" onclick="showPage('page-edit-widgets')">
+                    <span class="material-symbols-outlined">add</span>
+                    ウィジェットを編集
+                </button>
+            </div>
+
+
+        </div>
+
+        <main-footer></main-footer>
+
+        <script src="js/header.js"></script>
+        <script src="js/footer.js"></script>
+        <script type="module" src="js/home.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,422 @@
+:root {
+    --primary: #D15162;
+    /* TOTALウィジェットの専用指定カラー */
+    --bg-app: #f1f5f9;
+    /* アプリ背景 */
+    --surface: #ffffff;
+    /* カード・ベース背景 */
+    --text-main: #0f172a;
+    /* メイン文字 */
+    --text-sub: #64748b;
+    /* サブ文字 */
+    --border: #e2e8f0;
+    /* 境界線 */
+    --accent-gold: #eab308;
+    /* 称号・ゴールド */
+    --accent-silver: #94a3b8;
+    /* 称号・シルバー */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Meiryo, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #1a1c1e;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 80px;
+    /* フッター分の余白 */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e1e2e5;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-top: 1px solid #e1e2e5;
+    padding: 12px 20px;
+    text-align: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+.logo-area {
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #1a1c1e;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #43474e;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.icon-btn:hover {
+    background-color: #f0f1f4;
+}
+
+/* =========================================
+   上部イメージエリア
+========================================= */
+
+.welcome-container {
+  position: relative;
+  width: 100%;       
+  max-width: 800px;  
+  margin: 0 auto;
+}
+
+.header-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+/* 文字のスタイル：画像の左下に配置 */
+#welcome-message {
+  position: absolute;
+  /* 位置の指定 */
+  bottom: 20px;      /* 下から20px浮かす */
+  left: 20px;        /* 左から20px離す */
+  
+  /* 見た目の調整 */
+  margin: 0;
+  color: white;      
+  font-size: 2.5rem;   
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+}
+
+.header-image-wrapper {
+    width: 100%;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* =========================================
+   グリッドレイアウト
+========================================= */
+.widget-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px; /* gap-4 に相当 */
+}
+
+/* =========================================
+   ウィジェット共通スタイル
+========================================= */
+.widget {
+    border-radius: 28px;
+    padding: 20px;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* デフォルトの軽い影 */
+    
+    /* 浮き出るアニメーションの設定 */
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+/* ホバー（タップ）時に浮き出るエフェクト */
+.widget:hover {
+    transform: translateY(-6px); /* 上に6px移動 */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); /* 影を濃く、広くする */
+}
+
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.widget-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+}
+
+.arrow {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+.widget-value {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+}
+
+.widget-value .unit {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.widget-sub-value {
+    margin: 4px 0 0 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* =========================================
+   各ウィジェットの個別デザイン
+========================================= */
+
+/* TOTAL */
+.widget-total {
+    background-color: #c95c65; /* 赤色 */
+    color: #ffffff;
+}
+
+/* Recent ACTIVITY */
+.widget-recent {
+    background-color: #f3ceaa; /* オレンジ色 */
+    color: #000000;
+}
+
+/* Weather */
+.widget-weather {
+    background: linear-gradient(135deg, #4f87f5 0%, #7db1f9 100%);
+    color: #ffffff;
+}
+
+/* Empty (右下のグレーボタン) */
+.widget-empty {
+    background-color: #d8d8d8; /* 画像に近いグレー */
+    color: #000000;
+    box-shadow: none;
+    display: flex;
+    justify-content: center; /* 縦方向の中央 */
+}
+
+.widget-empty:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* ホバー時の影 */
+}
+
+.widget-empty .align-right {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+}
+
+/* aタグカード */
+.card-link,
+.card-link:visited,
+.card-link:hover,
+.card-link:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* SPA side panel */
+.app-container > main-header {
+    display: block;
+}
+
+.panel-backdrop {
+    position: fixed;
+    inset: 0 max(calc((100vw - 600px) / 2), 0px);
+    z-index: 199;
+    border: 0;
+    background: rgba(15, 23, 42, 0.32);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 360ms ease, visibility 360ms ease;
+}
+
+.panel-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: max(calc((100vw - 600px) / 2), 0px);
+    z-index: 200;
+    width: min(360px, 88vw);
+    height: 100dvh;
+    overflow-y: auto;
+    background: var(--surface);
+    box-shadow: -8px 0 32px rgba(15, 23, 42, 0.16);
+    padding: 24px;
+    box-sizing: border-box;
+    transform: translateX(104%);
+    opacity: 0.92;
+    visibility: hidden;
+    transition:
+        transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 360ms ease,
+        visibility 520ms;
+}
+
+.side-panel.open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-btn {
+    float: right;
+    cursor: pointer;
+}
+
+.settings-page {
+    display: grid;
+    gap: 20px;
+    padding: 8px 0;
+}
+
+.settings-page label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .panel-backdrop,
+    .side-panel {
+        transition-duration: 0.01ms;
+    }
+}
+
+/* =========================================
+   フォームスタイル
+========================================= */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.activities-page {
+    padding: 24px 20px;
+}
+
+.activities-page h1 {
+    margin-bottom: 20px;
+}
+
+#activity-form {
+    display: grid;
+    gap: 10px;
+}
+
+#activity-form button,
+.activity-list button {
+    width: fit-content;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+}
+
+#activity-form button:disabled,
+.activity-list button:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
+#activity-status {
+    min-height: 1.5em;
+    margin: 16px 0 8px;
+    color: var(--text-sub);
+}
+
+.activity-list {
+    display: grid;
+    gap: 8px;
+    list-style: none;
+}
+
+.activity-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}

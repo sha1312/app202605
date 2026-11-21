@@ -155,7 +155,8 @@ footer {
 .widget-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px; /* gap-4 に相当 */
+    gap: 16px;
+    padding-inline: 20px;
 }
 
 /* =========================================

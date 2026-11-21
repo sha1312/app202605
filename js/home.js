@@ -11,7 +11,7 @@ async function loadLatestActivity() {
 
     if (!result.activity) {
         recentName.textContent = "活動なし";
-        recentTime.textContent = "活動を登録してください";
+        recentTime.textContent = "...";
         return;
     }
 
@@ -23,6 +23,6 @@ async function loadLatestActivity() {
 
 loadLatestActivity().catch((error) => {
     console.error("最新活動の取得に失敗しました:", error);
-    recentName.textContent = "読み込み失敗";
-    recentTime.textContent = "活動ページで確認してください";
+    recentName.textContent = "Failed";
+    recentTime.textContent = "...";
 });
